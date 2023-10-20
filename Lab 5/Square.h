@@ -9,7 +9,6 @@ protected:
 
 public:
     Square(double x, double y, double side, const char* name);
-
     virtual double area() const;
     virtual double perimeter() const;
     virtual void display() const;

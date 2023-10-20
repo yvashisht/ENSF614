@@ -1,11 +1,31 @@
 #include "Rectangle.h"
+#include "Square.h"
 #include <iostream>
 #include <cstring> 
 #include <cmath>    
-    
-    
-Rectangle::Rectangle(double x, double y, double sideA, double sideB, const char* name) 
-    : Square(x, y, sideA, name), side_b(sideB) {}
+
+Rectangle::Rectangle(double x, double y, double side_a, double side_b, const char* name)
+    : Square(x, y, side_a, name), side_b(side_b) {
+}
+
+Rectangle::Rectangle(const Rectangle& source)
+    : Shape(source.getName(), source.getOrigin()),
+      side_a(source.side_a), 
+      side_b(source.side_b) 
+{
+   
+}
+
+Rectangle& Rectangle::operator=(const Rectangle& r) {
+    if (this != &r) {
+        this->setName(r.getName());
+        this->setOrigin(r.getOrigin());
+        this->side_a = r.side_a;
+        this->side_b = r.side_b;
+    }
+    return *this;
+}
+
 
 double Rectangle::area() const {
     return side_a * side_b;
@@ -21,6 +41,9 @@ double Rectangle::getSideB() const {
 
 void Rectangle::setSideB(double side) {
     side_b = side;
+}
+
+Rectangle::~Rectangle() {
 }
 
 void Rectangle::display() const {

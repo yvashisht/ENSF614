@@ -1,9 +1,11 @@
 #include "Square.h"
+#include "Point.h"
 #include <iostream>
 #include <cstring> 
 #include <cmath>   
-    
-Square::Square(double x, double y, double side, const char* name) : Shape(x, y, name), side_a(side) {
+
+Square::Square(double x, double y, double side, const char* name)
+    : Shape(x, y, name), side_a(side) {
 }
 
 double Square::area() const {

@@ -9,8 +9,11 @@ private:
     double side_b;
 
 public:
-    Rectangle(double x, double y, double sideA, double sideB, const char* name);
-
+    
+    Rectangle(double x, double y, double side_a, double side_b, const char* name);
+    Rectangle(const Rectangle& source);
+    virtual ~Rectangle();
+    Rectangle& operator=(const Rectangle& r);
     virtual double area() const;
     virtual double perimeter() const;
     virtual void display() const;
