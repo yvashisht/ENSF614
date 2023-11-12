@@ -17,12 +17,14 @@ int main()
     
     moon(ref, arr);
     ref++;
-    cout << endl << arr[0] << "   " << arr[1] << endl;
+    cout << "\nin main after moon and ref++: " << arr[0] << " " << arr[1] << " " << arr[2] << endl;
     int* p = &arr[0];
     
     mars(arr[1] + 300, p);
-    cout << endl << arr[0] << "   " << arr[1] << endl << arr[2] << endl;
+    cout << endl << arr[0] << " " << arr[1] << endl << arr[2] << endl;
     
+    cout << "Final state of arr: " << arr[0] << " " << arr[1] << " " << arr[2] << endl;
+
     return 0;
 }
 
@@ -31,6 +33,8 @@ void moon(int& arg1, int* arg2)
     arg1++;
     (*arg2)++;
     
+    cout << "\nin moon at Point One: "<< arg1 << " " << *arg2;
+
     // point one
     
     return;
@@ -39,9 +43,9 @@ void moon(int& arg1, int* arg2)
 void mars(const int& arg1, int*& arg2)
 {
     *arg2 = arg1 + 200;
-    cout << "\nin mars: "<< arg1 << "   " << *arg2;
+    cout << "\nin mars: "<< arg1 << " " << *arg2;
     jupiter(*arg2);
-    cout << "\nin mars: "<< arg1 << "   " << *arg2;
+    cout << "\nin mars: "<< arg1 << " " << *arg2;
     return;
 }
 

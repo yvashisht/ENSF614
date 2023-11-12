@@ -1,4 +1,5 @@
 #include "Shape.h"
+#include "Point.h"
 #ifndef SQUARE_H
 #define SQUARE_H
 

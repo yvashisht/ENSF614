@@ -1,5 +1,6 @@
 #include "Rectangle.h"
 #include "Square.h"
+#include "Point.h"
 #include <iostream>
 #include <cstring> 
 #include <cmath>    
@@ -16,12 +17,11 @@ Rectangle::Rectangle(const Rectangle& source)
    
 }
 
-Rectangle& Rectangle::operator=(const Rectangle& r) {
-    if (this != &r) {
-        this->setName(r.getName());
-        this->setOrigin(r.getOrigin());
-        this->side_a = r.side_a;
-        this->side_b = r.side_b;
+Rectangle& Rectangle::operator=(const Rectangle& other)
+{
+    if (this != &other)
+    {
+        Square::operator=(other);
     }
     return *this;
 }
