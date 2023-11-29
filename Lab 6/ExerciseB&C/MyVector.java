@@ -1,8 +1,4 @@
-/* ENSF 614 - Lab 6 - Exercise B and C
- * Yajur Vashisht, November 2023
- */
-
-import java.util.*;
+import java.util.ArrayList;
 
 public class MyVector<E extends Number & Comparable<E>> {
 
@@ -19,10 +15,10 @@ public class MyVector<E extends Number & Comparable<E>> {
     }
 
     public void add(Item<E> value) {
-        storageM.add((Item<E>) value);
+        storageM.add(value);
     }
 
-    public void setSortStrategy(Sorter<E> s) {
+    public void setSortStrategy(Sorter s) {
         this.sorter = s;
     }
 
@@ -32,7 +28,7 @@ public class MyVector<E extends Number & Comparable<E>> {
 
     public void display() {
         for (int i = 0; i < storageM.size(); i++) {
-            System.out.print(storageM.get(i).getItem() + " ");
+            System.out.println(storageM.get(i).getItem() + " ");
         }
         System.out.println();
     }

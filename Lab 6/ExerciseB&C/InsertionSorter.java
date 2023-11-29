@@ -1,7 +1,3 @@
-/* ENSF 614 - Lab 6 - Exercise B and C
- * Yajur Vashisht, November 2023
- */
-
 import java.util.ArrayList;
 
 public class InsertionSorter<E extends Number & Comparable<E>> implements Sorter<E> {
